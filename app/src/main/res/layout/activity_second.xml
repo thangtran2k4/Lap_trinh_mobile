@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/edtA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Input number A"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/edtB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Input number B"
+            android:inputType="numberDecimal"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A + B"/>
+
+        <Button
+            android:id="@+id/btnSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A - B"/>
+
+        <Button
+            android:id="@+id/btnMul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A * B"/>
+
+        <Button
+            android:id="@+id/btnDiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A / B"/>
+
+        <TextView
+            android:id="@+id/txtResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Result"
+            android:textSize="20sp"
+            android:paddingTop="20dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
