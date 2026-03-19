@@ -5,6 +5,7 @@ import android.widget.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bth2.adapter.DocGiaAdapter;
 import com.example.bth2.model.DocGia;
 
 import java.util.ArrayList;
@@ -14,10 +15,11 @@ public class MainActivity2 extends AppCompatActivity {
     EditText edtTen, edtMa, edtSach, edtNgay;
     RadioButton rbGV, rbSV;
     Button btnThem;
+
     ListView listView;
 
-    ArrayList<DocGia> list = new ArrayList<>();
-    ArrayAdapter<DocGia> adapter;
+    ArrayList<DocGia> list;
+    DocGiaAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,24 +35,25 @@ public class MainActivity2 extends AppCompatActivity {
         rbSV = findViewById(R.id.rbSV);
 
         btnThem = findViewById(R.id.btnThem);
+
         listView = findViewById(R.id.listView);
 
-        adapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                list
-        );
+        list = new ArrayList<>();
+
+        adapter = new DocGiaAdapter(this, list);
 
         listView.setAdapter(adapter);
+
 
         btnThem.setOnClickListener(v -> {
 
             String ten = edtTen.getText().toString();
             String ma = edtMa.getText().toString();
+            String ngay = edtNgay.getText().toString();
+
             int sach = Integer.parseInt(
                     edtSach.getText().toString()
             );
-            String ngay = edtNgay.getText().toString();
 
             String loai;
 
@@ -59,16 +62,16 @@ public class MainActivity2 extends AppCompatActivity {
             else
                 loai = "SV";
 
-            DocGia dg =
-                    new DocGia(
-                            ten,
-                            ma,
-                            sach,
-                            ngay,
-                            loai
-                    );
+            DocGia dg = new DocGia(
+                    ten,
+                    ma,
+                    sach,
+                    ngay,
+                    loai
+            );
 
             list.add(dg);
+
             adapter.notifyDataSetChanged();
 
         });
